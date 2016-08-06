@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Seagate Downloader options</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+<!-- <h3>***THIS EXTENSION IS IN NO WAY AFFILIATED WITH SEAGATE***</h3>
+ --><body>
+  <label>
+    Username
+    <input type="text" id="username">
+  </label>
+  <label>
+    Password
+    <input type="password" id="password">
+  </label>
+  <label>
+    Hostname/IP of NAS
+    <input type="text" id="host">
+  </label>
+  <label>
+    Download locations
+    <textarea id="destinations" placeholder="/Public/Videos"></textarea>
+    <span class="sub">NB: The paths are CASE sensitive</span>
+  </label>
+
+  <div id="status" data-show="false"></div>
+  <button id="save">Save</button>
+
+  <script src="assets/js/vendor/jquery.min.js"></script>
+  <script src="assets/js/vendor/sha1.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/options.js"></script>
+</body>
+</html>

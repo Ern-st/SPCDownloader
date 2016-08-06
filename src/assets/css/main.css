@@ -1,0 +1,78 @@
+body { 
+  padding: 10px; 
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+input, textarea{
+  display: block;
+}
+span.sub{
+  font-size: 10px;
+}
+#status{
+  /*display: none;*/
+  overflow: hidden;
+  background: white;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  padding: 3px;
+  transition: all .5s linear;
+}
+#status[data-show="false"]{
+  max-height: 0px;
+  border: 1px solid white !important;
+  background: white !important;
+}
+#status[data-show="true"]{
+  max-height: 100px;
+}
+#status.success{
+  color: #4FC058;
+  color: white;
+  background: #4FC058;
+  border: 1px solid #4FC058;
+}
+#status.fail{
+  color: #C45453;
+  color: white;
+  background: #C45453;
+  border: 1px solid #C45453;
+}
+
+
+@-webkit-keyframes opacity {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-moz-keyframes opacity {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes opacity {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+#status span {
+  -webkit-animation-name: opacity;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: opacity;
+  -moz-animation-duration: 1s;
+  -moz-animation-iteration-count: infinite;
+  animation-name: opacity;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+#status span:nth-child(2) {
+  -webkit-animation-delay: 100ms;
+  -moz-animation-delay: 100ms;
+  animation-delay: 100ms;
+}
+#status span:nth-child(3) {
+  -webkit-animation-delay: 300ms;
+  -moz-animation-delay: 300ms;
+  animation-delay: 300ms;
+}
