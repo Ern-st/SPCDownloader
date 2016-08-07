@@ -6,9 +6,11 @@ var track = {
 
 var statusElm = {
   elm: $('#status'),
+  timer: null,
   set: function(msg, classVal = "", hide = false, hideDelay = 1000){
+    clearTimeout(this.timer);
     if (hide) {
-      setTimeout(function(that) {
+      this.timer = setTimeout(function(that) {
         that.elm.attr("data-show","false");
       }, hideDelay, this);
     } else if (this.elm.attr("data-show") === "false") {
