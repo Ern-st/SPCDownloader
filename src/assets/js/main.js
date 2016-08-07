@@ -15,7 +15,6 @@ chrome.storage.sync.get(function(items) {
 	spcAPI.options.username = items.username;
 	spcAPI.options.password = items.password;
 	spcAPI.options.host = items.host;
-	//spcAPI.options.destinations = items.destinations;
 	buildContextMenu(spcAPI.options.destinations = items.destinations);
 });
 
@@ -49,7 +48,7 @@ spcAPI.callAPI_prehook = function(){
 	}
 }
 
-var silly = ["cat","Canary in a coalmine","<Allan: insert something funny here!>"];
+var silly = ["cat","canary in a coalmine","<Allan: insert something funny here!>"];
 
 function clearFinishedDownloads(){
 	var torrents = spcAPI.listDownloads(8);

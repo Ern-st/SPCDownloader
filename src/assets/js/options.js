@@ -25,6 +25,7 @@ var statusElm = {
   }
 };
 
+//todo: create validation function to check if all the destinations are valid shares on the NAS before saving.
 function validate_destinations(destinations){
   var deferredAPIcalls = [];
   for (var i = destinations.length - 1; i >= 0; i--) {
@@ -62,6 +63,7 @@ function save_options() {
     password: password,
     host: host
   };
+  //make a call to random API endpoint to check that username/password/host is valid.
   spcAPI.callAPI("healthState",{}).done(function(){
     chrome.storage.sync.set({
       username: username,
