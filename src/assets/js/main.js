@@ -15,7 +15,8 @@ chrome.storage.sync.get(function(items) {
 	spcAPI.options.username = items.username;
 	spcAPI.options.password = items.password;
 	spcAPI.options.host = items.host;
-	spcAPI.options.destinations = items.destinations;
+	//spcAPI.options.destinations = items.destinations;
+	buildContextMenu(spcAPI.options.destinations = items.destinations);
 });
 
 chrome.storage.onChanged.addListener(function(changes, namespace) {
@@ -161,4 +162,3 @@ function buildContextMenu(downloadLocations){
 		onclick: clearFinishedDownloads
 	});
 }
-buildContextMenu(spcAPI.options.destinations);
