@@ -49,10 +49,14 @@ function save_options() {
   var host = $('#host').val();
   var destinations = $("#destinations").val().split("\n").reverse();
   statusElm.set("Validating options<span>.</span><span>.</span><span>.</span>");
-  if (destinations[0] === "") {
-    statusElm.set("You need to specify some Download locations before you can save the options.","fail",true,3000);
+  if (username === "" || password === "da39a3ee5e6b4b0d3255bfef95601890afd80709") {
+    statusElm.set("You need to enter a username & password before you can save the options.","fail",true,3000);
     return false;
   }
+  else if (destinations[0] === "") {
+    statusElm.set("You need to specify some Download locations before you can save the options.","fail",true,3000);
+    return false;
+  } 
   spcAPI.options = {
     username: username,
     password: password,
