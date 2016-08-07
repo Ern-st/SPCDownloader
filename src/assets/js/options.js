@@ -68,7 +68,11 @@ function save_options() {
   }).fail(function(res){
     switch(res.status){
       case 401:
-        var msg = 'Wrong username or password! options were not saved.';
+        if (res.responseJSON["text"] === "Ip blocked") {
+          var msg = "Too many failed logins attempts, try again in 15 seconds."
+        } else {
+          var msg = 'Wrong username or password! options were not saved.';
+        }
         break;
       case 0:
         var msg = 'Hostname/IP could not be contacted! Maybe the NAS is powered off? options were not saved.';
